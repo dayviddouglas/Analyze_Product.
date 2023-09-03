@@ -7,12 +7,8 @@ public class Produto {
   
   
   public Produto(int cod, String nomeProduto, String precoProduto) {
-	if (cod <= 0) {
-		throw new IllegalArgumentException("Você digitou o código menor ou igual a 0.");
-	}else if (nomeProduto.length()<=4) {
-		throw new IllegalArgumentException("Você deverá inserir ao menos 5 letras no nome do produto.");
-	}else if (verificaPreco(precoProduto)!= true) {
-		throw new IllegalArgumentException("Você não digitou o preço em real ou escreveu errado.");
+	if (cod <= 0 || nomeProduto.length()<=4 || verificaPreco(precoProduto)!= true ) {
+		throw new IllegalArgumentException("Você escreveu alguma informação errada.");
 	}
 	
 	else {
